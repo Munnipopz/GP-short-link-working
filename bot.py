@@ -19,7 +19,7 @@ bot = Client('gplink bot',
 async def start(bot, message):
     await message.reply(
         f"**Hi {message.chat.first_name}!**\n\n"
-        "I'm GPlink bot. Just send me link and get short link")
+        "❤️ᴵ'ᴹ ᴳᴾˡⁱⁿᵏ ᴮᴼᵀ. ᴶᵁˢᵀ ˢᴱᴺᴰ ᴹᴱ ˡⁱⁿᵏ ᴬᴺᴰ ᴳᴱᵀ ˢᴴᴼᴿᵀ ᴸᴵᴺᴷ❤️")
 
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
@@ -27,7 +27,7 @@ async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
         short_link = await get_shortlink(link)
-        await message.reply(f'Here is your[💙CLICK LINK💙]({short_link})', quote=True)
+        await message.reply(f'ʜᴇʀᴇ ɪꜱ ʏᴏᴜʀ[💙ᴄʟɪᴄᴋ ʟɪɴᴋ💙]({short_link})', quote=True)
     except Exception as e:
         await message.reply(f'Error: {e}', quote=True)
 
